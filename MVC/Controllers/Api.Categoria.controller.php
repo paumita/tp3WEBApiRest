@@ -56,8 +56,8 @@ class ApiCategoriaController extends ApiController{
     }
 
     public function deleteCategoria($params = []){
-        $inversionDelete = $this->model->getCategoria($params[':ID']);
-        if(!empty($inversionDelete)){
+        $deleteCategoria = $this->model->getCategoria($params[':ID']);
+        if(!empty($deleteCategoria)){
             $this->model->deleteCategoria($params[':ID']);
             $this->view->response(['Se borro con exito la categoria con el id = '.$params[':ID']],200);
         }else{
